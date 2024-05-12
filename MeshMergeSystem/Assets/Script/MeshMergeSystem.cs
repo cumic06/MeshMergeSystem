@@ -13,6 +13,7 @@ public class MeshMergeSystem : MonoBehaviour
     {
         meshList = parentMesh.GetComponentsInChildren<MeshFilter>().ToList();
         meshList.Remove(meshList[0]);
+
         var combine = new CombineInstance[meshList.Count];
 
         for (int i = 0; i < meshList.Count; i++)
