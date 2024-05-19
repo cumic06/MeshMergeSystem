@@ -10,6 +10,10 @@
 
 <h2>프로젝트 결과</h2>
 <div align="left">
-<p>오브젝트가 100개 있는 상황에서 300fps가 나오던게</p>
-<p>메쉬를 합친 후 700fps까지 나오게 되었습니다.</p>
+<p>오브젝트가 1200개 있는 상황에서 160fps가 나오던게</p>
+<p>메쉬를 합친 후 500fps까지 나오게 되었습니다.</p>
+<img src="images/BeforeMeshMerge.png" width = 700px>
+<- 메쉬 합치기 전
+<img src="images/AfterMeshMerge.png" width = 700px>
+<- 메쉬 합친 후
 </div>
