@@ -27,7 +27,6 @@ public class MeshMergeSystem : MonoBehaviour
         mesh.CombineMeshes(combine);
 
         targetMesh.mesh = mesh;
-
         SaveMesh(targetMesh.sharedMesh, gameObject.name, false, true);
 
         for (int i = 0; i < parentMesh.transform.childCount; i++)
