@@ -13,9 +13,9 @@
 <p>오브젝트가 1200개 있는 상황에서 160fps가 나오던게</p>
 <p>메쉬를 합친 후 500fps까지 나오게 되었습니다.</p>
 <img src="images/BeforeMeshMerge.png" width = 700px>
-<- 메쉬 합치기 전
+<- 메쉬 병합 전
 <br>
 <img src="images/AfterMeshMerge.png" width = 700px>
-<- 메쉬 합친 후
+<- 메쉬 병합 후
 <br>
 </div>
