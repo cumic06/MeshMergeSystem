@@ -14,6 +14,8 @@
 <p>메쉬를 합친 후 500fps까지 나오게 되었습니다.</p>
 <img src="images/BeforeMeshMerge.png" width = 700px>
 <- 메쉬 합치기 전
+<br>
 <img src="images/AfterMeshMerge.png" width = 700px>
 <- 메쉬 합친 후
+<br>
 </div>
