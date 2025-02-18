@@ -1,27 +1,29 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MeshSort : MonoBehaviour
 {
-    public GameObject parent; // »ý¼ºÇÒ ¿ÀºêÁ§Æ® ÇÁ¸®ÆÕ
-    private Transform[] meshList;
-    public int totalObjects; // ÃÑ ¿ÀºêÁ§Æ® °³¼ö
+    public GameObject parent; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    private List<Transform> meshList = new();
     public int row;
-    public float spacing = 2f; // ¿ÀºêÁ§Æ® °£ÀÇ °£°Ý
+    public float spacing = 2f; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     [ContextMenu("GridGen")]
     void MoveObjects()
     {
-        meshList = parent.GetComponentsInChildren<Transform>();
-        int column = Mathf.CeilToInt((float)meshList.Length / row); // ¿­ÀÇ °³¼ö °è»ê
+        meshList = parent.GetComponentsInChildren<Transform>().ToList();
+        meshList.RemoveAt(0);
+        int column = Mathf.CeilToInt((float)meshList.Count / row); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
         for (int i = 0; i < row; i++)
         {
             for (int j = 0; j < column; j++)
             {
                 int index = i * column + j;
-                if (index < meshList.Length)
+                if (index < meshList.Count)
                 {
-                    // °¢ Çà°ú ¿­¿¡ ¿ÀºêÁ§Æ®ÀÇ À§Ä¡ ÀÌµ¿
+                    // ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½Ìµï¿½
                     Vector3 newPosition = new(j * spacing, 0, i * spacing);
                     meshList[index].transform.position = newPosition;
                 }

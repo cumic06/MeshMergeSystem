@@ -6,7 +6,7 @@ using System.Linq;
 public class MeshMergeSystem : MonoBehaviour
 {
     [SerializeField] private GameObject parentMesh;
-    private List<MeshFilter> meshList;
+    private List<MeshFilter> meshList = new();
     [SerializeField] private MeshFilter targetMesh;
 
     public void MeshMerge()
@@ -27,6 +27,7 @@ public class MeshMergeSystem : MonoBehaviour
         mesh.CombineMeshes(combine);
 
         targetMesh.mesh = mesh;
+        
         SaveMesh(targetMesh.sharedMesh, gameObject.name, false, true);
 
         for (int i = 0; i < parentMesh.transform.childCount; i++)
@@ -47,7 +48,7 @@ public class MeshMergeSystem : MonoBehaviour
 
     private void SaveMesh(Mesh mesh, string name, bool makeNewInstance, bool optimizeMesh)
     {
-        string path = EditorUtility.SaveFilePanel("Save Separate Mesh Asset", "Assets/", name, "asset");
+        string path = EditorUtility.SaveFilePanel("Save Separate Mesh Asset", "Assets/Resources", name, "asset");
 
         if (string.IsNullOrEmpty(path)) return;
 
